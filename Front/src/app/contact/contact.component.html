@@ -1,0 +1,38 @@
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" [formGroup]= "contactForm">
+
+        <p class="h4 mb-4">Contact us</p>
+      
+        <!-- Name -->
+        <input type="text" 
+          class="form-control mb-4" formControlName="name" placeholder="Name">
+      
+        <!-- Email -->
+        <input type="email" 
+          class="form-control mb-4" formControlName="email" placeholder="E-mail">
+      
+        <!-- Subject -->
+        <label>Subject</label>
+        <select  class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">Feature request</option>
+        </select>
+      
+        <!-- Message -->
+        <div class="form-group">
+          <textarea class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+            rows="3" placeholder="Message" formControlName="message"></textarea>
+        </div>
+      
+        <!-- Copy -->
+        <mdb-checkbox  class="mb-4">Send me a copy of this message</mdb-checkbox>
+      
+        <!-- Send button -->
+        <button mdbBtn color="elegant" outline="true" block="true" class="z-depth-0 my-4 "
+        type="submit"  >Send</button>
+      
+      </form>
+      <!-- Default form contact -->
