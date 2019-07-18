@@ -76,6 +76,24 @@ app.delete('/session/:id', (req, res) => {
   });
 });
 
+app.post('/ticket', (req, res) => {
+
+  // récupération des données envoyées
+  const formData = req.body;
+
+  // connexion à la base de données, et insertion de l'employé
+  connection.query('INSERT INTO ticket SET ?', formData, (err, results) => {
+
+    if (err) {
+      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+      console.log(err);
+      res.status(500).send("Erreur lors de la sauvegarde du ticket");
+    } else {
+      // Si tout s'est bien passé, on envoie un statut "ok".
+      res.sendStatus(200);
+    }
+  });
+});
 
 
 //GET (light) - Récupération de quelques champs spécifiques (id, names, dates, etc...)
