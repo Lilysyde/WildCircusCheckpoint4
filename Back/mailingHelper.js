@@ -18,7 +18,7 @@ module.exports.mailing = async (req, res) => {
   
   
         let info = await transporter.sendMail({
-            from: '"Rémy"<teissier.remy@gmail.com>',
+            from: '"Emilie"<emiliegrimoud@yahoo.fr>',
             to: req.body.email,
             subject: 'Formulaire Contact',
             text: req.body.name,
