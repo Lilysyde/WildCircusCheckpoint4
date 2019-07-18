@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ConnectionInterfaceService } from '../connection-interface.service';
 
 @Component({
@@ -10,10 +10,18 @@ import { ConnectionInterfaceService } from '../connection-interface.service';
 export class TicketComponent implements OnInit {
   sessions;
   
+  ticketForm : FormGroup = this.fb.group({
+    nom:["",Validators.required],
+    quantite:["",Validators.required],
+    adresse_mail:["",Validators.required],
+    date_paiement:["",Validators.required],
+    total_prix:["",Validators.required],
+  })
+  
   loginFormModalEmail = new FormControl('', Validators.email);
   loginFormModalPassword = new FormControl('', Validators.required);
 
-  constructor(private connect: ConnectionInterfaceService) { }
+  constructor(private fb:FormBuilder, private connect: ConnectionInterfaceService) { }
 
   ngOnInit() {
    this.connect.getInterface().subscribe(res=>{
@@ -22,5 +30,9 @@ export class TicketComponent implements OnInit {
 
    })
   }
-
+  onSubmit() {
+    this.connect.postAchat(this.ticketForm.value).subscribe(res=>{
+      console.log(res)
+    })
+}
 }

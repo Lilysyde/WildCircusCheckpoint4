@@ -1,0 +1,10 @@
+@media screen and (max-width: 640px) {
+    table,
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: auto!important;
+      /* parceque tu as mis des style inline grrr */
+    }
+  }

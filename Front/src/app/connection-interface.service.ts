@@ -20,4 +20,7 @@ export class ConnectionInterfaceService {
    deleteSession(id: number):Observable<any>{
     return this.http.delete<any>(`http://localhost:2400/session/${id}`)
 }
+postAchat(formData):Observable<any>{
+  return this.http.post<any>('http://localhost:2400/session',formData)
+}
 }
