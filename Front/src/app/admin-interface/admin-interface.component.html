@@ -1,0 +1,85 @@
+<div class="container ">
+  
+
+        <h4 class="text-center mt-5">Interface administrateur</h4>
+        <br>
+        <form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" [formGroup]="sessionForm">
+      
+          <label class="add mr-2 ml-1" >Lieu</label>
+          <input placeholder="Ville" formControlName="lieu" type="text" name="Lieu" />
+      
+          <label class="add mr-2 ml-1">Prix</label>
+          <input placeholder="Prix en euros" formControlName="prix" type="number" name="prix"/>
+
+          <label class="add mr-2 ml-1">Image</label>
+          <input placeholder="Lien URL" formControlName="assets" type="text" name="image"/>
+
+          <label class="add mr-2 ml-1">Date</label>
+          <input placeholder="Date format jj/mm/aa" formControlName="date" type="date" name="date"/>
+      
+          <br> 
+
+          <button class=" mt-3 mr-3 ml-3 btn btn-lg btn-primary btn-block mb-1 sunny-morning-gradient"  type="submit" >Create</button>
+    
+       
+        </form>
+
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <!--Card-->
+                <mdb-card cascade="true" narrower="true" class="mt-5">
+                    <!--Card image-->
+                    
+                    <!--/Card image-->
+                    <!--Card content-->
+                    <mdb-card-body>
+        
+
+        
+                        <h3 class="mt-5 text-left"><strong>Table session</strong></h3>
+                        <p>To change a session
+                        </p>
+        
+        
+                        <!--Table-->
+                        <table class="table">
+        
+                            <!--Table head-->
+                            <thead class="grey darken-4 text-light lighten-4">
+                            <tr>
+                                <th>#</th>
+                                <th>lieu</th>
+                                <th>prix</th>
+                                <th>assets</th>
+                                <th>date</th>
+                            </tr>
+                            </thead>
+                            <!--Table head-->
+        
+                            <!--Table body-->
+                            <tbody>
+                            <tr  *ngFor ="let session of sessions">
+                                <th scope="row">{{session.id}}</th>
+                                <td>{{session.lieu}}</td>
+                                <td>{{session.prix}}</td>
+                                <td>{{session.assets}}</td>
+                                <td>{{session.date | date }}</td>
+                                <button class="mr-3 ml-3  sunny-morning-gradient" (click)="deleteSession(session.id)" >Supprimer</button>
+
+                            </tr>
+                    
+                            </tbody>
+                            <!--Table body-->
+                        </table>
+                        <!--Table-->
+        
+                  
+                    </mdb-card-body>
+                    <!--/.Card content-->
+                </mdb-card>
+                <!--/.Card-->
+            </div>
+        </div>
+        </div>
+        <br>

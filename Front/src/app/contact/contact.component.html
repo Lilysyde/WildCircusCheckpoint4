@@ -1,8 +1,9 @@
 <!-- Default form contact -->
+<div class="container pt-3">
 <form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" [formGroup]= "contactForm">
 
         <p class="h4 mb-4">Contact us</p>
-      
+   
         <!-- Name -->
         <input type="text" 
           class="form-control mb-4" formControlName="name" placeholder="Name">
@@ -22,6 +23,7 @@
         </select>
       
         <!-- Message -->
+        
         <div class="form-group">
           <textarea class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
             rows="3" placeholder="Message" formControlName="message"></textarea>
@@ -35,4 +37,7 @@
         type="submit"  >Send</button>
       
       </form>
+  
+    </div>
+  <br>
       <!-- Default form contact -->

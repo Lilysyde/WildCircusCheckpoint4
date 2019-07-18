@@ -1,19 +1,68 @@
-<mdb-card>
+<div class="card-deck ml-2 mr-2">
+<mdb-card *ngFor ="let session of sessions">
         <!--Card image-->
-        <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+        <mdb-card-img src= "{{ session.assets}}" alt="Card image cap"></mdb-card-img>
         <!--Card content-->
         <mdb-card-body>
-      
+    
           <!--Title-->
           <mdb-card-title>
-            <h4>Lyon</h4>
+            <h4>Ticket</h4>
           </mdb-card-title>
       
           <!--Text-->
-          <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </mdb-card-text>
-      
-          <a href="#" mdbBtn color="primary" mdbWavesEffect>Acheter</a>
+        
+          <mdb-card-text>   Lieu: {{ session.lieu }} 
+            </mdb-card-text>
+            <mdb-card-text>  Date: {{ session.date | date }}
+              </mdb-card-text>
+              <mdb-card-text>  Prix: {{ session.prix}}
+                </mdb-card-text>
+              <mdb-card-text>  <select class="browser-default custom-select">
+                  <option selected>Number</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                </mdb-card-text>
+        
+            <button type="button" class="btn btn-lg btn-primary btn-block mb-1 sunny-morning-gradient" rounded="true" data-toggle="modal" data-target="#basicExample"
+            (click)="frame.show()" mdbWavesEffect>By Ticket</button>
+          
+          <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-5">
+                    <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+                    <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control validate"
+                      mdbInput>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                  </div>
+          
+                  <div class="md-form mb-4">
+                    <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+                    <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control validate"
+                      mdbInput>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                  </div>
+          
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
         </mdb-card-body>
       </mdb-card>
+    </div>
