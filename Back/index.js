@@ -115,6 +115,20 @@ console.log(err);
 });
 
 
+// DELETE - Suppression d'une entité
+// écoute de l'url "/api/employees"
+app.delete('/ticket/:id', (req, res) => {
+  // récupération des données envoyées
+  const id = req.params.id;
+  // connexion à la base de données, et suppression de l'employé
+  connection.query('DELETE FROM ticket WHERE id = ?', id, err => {
+    if (err) {
+      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+      console.log(err);
+      res.status(500).send("Erreur lors de la suppression d un recap");}
+  });
+});
+
 //GET (light) - Récupération de quelques champs spécifiques (id, names, dates, etc...)
 
 
