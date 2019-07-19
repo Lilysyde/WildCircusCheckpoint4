@@ -21,7 +21,7 @@
         <div class="md-form mb-4  ml-3">
             <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
 
-            <p> Prix : {{ticket.prix}}</p>
+            <p> Prix : {{ticket.total_prix}}</p>
         </div>
 
         <div class="md-form mb-4 ml-3">
@@ -30,6 +30,7 @@
             <p>Date de Paiement : {{ticket.date_paiement | date }}</p>
         </div>
 
+        <button class="mr-3 ml-3 mb-2 sunny-morning-gradient" (click)="deleteAchat(ticket.id)" >Supprimer</button>
 
     </mdb-card>
 </div>

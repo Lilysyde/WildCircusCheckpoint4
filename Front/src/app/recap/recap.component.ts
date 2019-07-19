@@ -17,5 +17,10 @@ this.tickets=res;
 console.log(res)
     })
   }
-
+deleteAchat(id: number){
+  this.connect.deleteAchat(id).subscribe( res=>{
+    console.log(res)
+    console.log('deleted')
+  });
+}
 }

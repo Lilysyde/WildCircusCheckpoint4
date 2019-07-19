@@ -26,4 +26,7 @@ postAchat(formData):Observable<any>{
 getAchat():Observable<any>{
   return this.http.get<any>('http://localhost:2400/ticket')
 }
+deleteAchat(id: number):Observable<any>{
+  return this.http.delete<any>(`http://localhost:2400/ticket/${id}`)
+}
 }
