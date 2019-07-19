@@ -96,6 +96,25 @@ app.post('/ticket', (req, res) => {
 });
 
 
+// GET - Récupération de l'ensemble des données de ta table
+app.get('/ticket', (req, res) => {
+
+  // connection à la base de données, et sélection des employés
+  connection.query('SELECT * from ticket', (err, results) => {
+
+    if (err) {
+console.log(err);
+      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+      res.status(500).send('Erreur lors de la récupération du Recap Achat');
+    } else {
+
+      // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
+      res.json(results);
+    }
+  });
+});
+
+
 //GET (light) - Récupération de quelques champs spécifiques (id, names, dates, etc...)
 
 
