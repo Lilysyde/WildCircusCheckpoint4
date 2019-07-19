@@ -20,6 +20,7 @@ import { LoginComponent } from './admin/login/login.component';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
+import { RecapComponent } from './recap/recap.component';
 
 var config = {
   apiKey: "AIzaSyAiUkANTooVgkyZERWhPdBQxZTosjDiylI",
@@ -42,6 +43,7 @@ var config = {
     AdminComponent,
     LoginComponent,
     AdminInterfaceComponent,
+    RecapComponent,
   
   ],
   imports: [

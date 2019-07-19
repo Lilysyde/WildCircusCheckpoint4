@@ -50,7 +50,7 @@
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
             <img src="assets/TICKET.png" alt="" class="img-fluid rounded-circle z-depth-0 panier"></a>
           <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My Purchase</a>
+            <a [routerLink]="['/Recap']" class="dropdown-item waves-light" mdbWavesEffect href="#">My Purchase</a>
           </div>
         </li>
       </ul>

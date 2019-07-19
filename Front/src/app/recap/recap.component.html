@@ -1,0 +1,36 @@
+<br>
+<div class="card-deck ml-2 mr-2 ">
+    <mdb-card *ngFor="let ticket of  tickets">
+        <div class="md-form mb-5 ml-3">
+            <!-- <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon> -->
+
+            <p>Nom : {{ticket.nom}}</p>
+        </div>
+
+        <div class="md-form mb-4 ml-3">
+
+            <p>Adresse email : {{ticket.adresse_mail}}</p>
+        </div>
+
+        <div class="md-form mb-4  ml-3">
+            <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+
+            <p> Quantité : {{ticket.quantite}}</p>
+        </div>
+
+        <div class="md-form mb-4  ml-3">
+            <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+
+            <p> Prix : {{ticket.prix}}</p>
+        </div>
+
+        <div class="md-form mb-4 ml-3">
+            <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+
+            <p>Date de Paiement : {{ticket.date_paiement | date }}</p>
+        </div>
+
+
+    </mdb-card>
+</div>
+<br>

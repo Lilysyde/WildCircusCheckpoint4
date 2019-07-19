@@ -31,6 +31,7 @@ export class TicketComponent implements OnInit {
    })
   }
   onSubmit() {
+    console.log(this.ticketForm.value as  JSON)
     this.connect.postAchat(this.ticketForm.value).subscribe(res=>{
       console.log(res)
     })

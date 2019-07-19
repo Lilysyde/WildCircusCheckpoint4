@@ -30,62 +30,62 @@
       <button type="button" class="btn btn-lg btn-primary btn-block mb-1 sunny-morning-gradient" rounded="true"
         data-toggle="modal" data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>Buy Ticket</button>
 
-      
-        <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
-          aria-labelledby="myModalLabel" aria-hidden="true">
-          <form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" [formGroup]="ticketForm">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Buy Ticket</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body mx-3">
-                <div class="md-form mb-5">
-                  <!-- <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon> -->
-                  <input type="email" formControlName="nom" id="defaultForm-email" class="form-control validate"
-                    mdbInput>
-                  <label data-error="wrong" data-success="right" for="defaultForm-email">Nom</label>
-                </div>
 
-                <div class="md-form mb-4">
-                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->[formControl]="loginFormModalPassword"
-                  class="form-control validate"
-                  mdbInput>
-                  <label data-error="wrong" data-success="right" for="defaultForm-pass">Email</label>
-                </div>
+      <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
 
-                <div class="md-form mb-4">
-                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
-                  <input type="password" formControlName="quantite" id="defaultForm-pass" class="form-control validate"
-                    mdbInput>
-                  <label data-error="wrong" data-success="right" for="defaultForm-pass"> Quantité</label>
-                </div>
 
-                <div class="md-form mb-4">
-                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
-                  <input type="password" id="defaultForm-pass" class="form-control validate" mdbInput>
-                  <label data-error="wrong" data-success="right" for="defaultForm-pass"> Prix: {{ session.prix}}</label>
-                </div>
 
-                <div class="md-form mb-4">
-                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
-                  <input type="password" formControlName="date_paiement" id="defaultForm-pass"
-                    class="form-control validate" mdbInput>
-                  <label data-error="wrong" data-success="right" for="defaultForm-pass">Date de Paiement</label>
-                </div>
-
-              </div>
-              <div class="modal-footer d-flex justify-content-center">
-                <button mdbBtn color="default" class="waves-light sunny-morning-gradient" mdbWavesEffect>Buy</button>
-              </div>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Buy Ticket</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body mx-3">
+              <form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" [formGroup]="ticketForm">
+
+                <div class="md-form m-5">
+                  <!-- <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon> -->
+                  <input type="text" formControlName="nom" class="form-control validate" mdbInput>
+                  <label>Nom</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+                  <input type="text" formControlName="adresse_mail" class="form-control validate" mdbInput>
+                  <label>adresse_mail</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+                  <input type="number" formControlName="quantite" class="form-control validate" mdbInput>
+                  <label> Quantité</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+                  <input type="number" formControlName="total_prix" class="form-control validate" mdbInput>
+                  <label> Prix Total</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <!-- <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon> -->
+                  <input type="date"  formControlName="date_paiement" class="form-control validate" mdbInput>
+                  <label>Date de Paiement</label>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" mdbBtn color="default" class="waves-light sunny-morning-gradient" mdbWavesEffect>Buy</button>
+                  </div>
+              </form>
+            </div>
+
           </div>
-        </form>
         </div>
-       
+
+      </div>
 
 
     </mdb-card-body>
